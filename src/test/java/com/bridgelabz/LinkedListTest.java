@@ -19,5 +19,24 @@ public class LinkedListTest {
         Assert.assertTrue(result);
     }
 
+    @Test
+    public void given3NumbersWhenAddedShouldPassLinkedListTest(){
+        INode<Integer> Node1 = new MyNode<>(70);
+        INode<Integer> Node2 = new MyNode<>(30);
+        INode<Integer> Node3 = new MyNode<>(56);
+
+        LinkedList linkedList = new LinkedList();
+
+        linkedList.add(Node1);
+        linkedList.add(Node2);
+        linkedList.add(Node3);
+
+        boolean result =  linkedList.getHead().equals(Node3) &&
+                linkedList.getHead().getNext().equals(Node2) &&
+                linkedList.getTail().equals(Node1);
+
+        Assert.assertTrue(result);
+
+    }
 
 }
