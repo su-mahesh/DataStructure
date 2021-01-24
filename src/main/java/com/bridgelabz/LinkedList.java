@@ -48,4 +48,8 @@ public class LinkedList {
         previousNode.setNext(nextNode);
         newNode.setNext(nextNode);
     }
+
+    public void pop() {
+        this.head = this.head.getNext();
+    }
 }

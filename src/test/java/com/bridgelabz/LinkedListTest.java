@@ -56,8 +56,8 @@ public class LinkedListTest {
                 linkedList.getTail().equals(Node3);
 
         Assert.assertTrue(result);
-
     }
+
     @Test
     public void given3NumbersWhenInsertedInBetweenShouldPassLinkedListTest(){
         INode<Integer> Node1 = new MyNode<>(56);
@@ -75,7 +75,26 @@ public class LinkedListTest {
                 linkedList.getTail().equals(Node2);
 
         Assert.assertTrue(result);
+    }
 
+    @Test
+    public void givenSequenceWhenDeletedFirstElementShouldPassLinkedListTest(){
+        INode<Integer> Node1 = new MyNode<>(56);
+        INode<Integer> Node2 = new MyNode<>(30);
+        INode<Integer> Node3 = new MyNode<>(70);
+
+        LinkedList linkedList = new LinkedList();
+
+        linkedList.append(Node1);
+        linkedList.append(Node2);
+        linkedList.append(Node3);
+
+        linkedList.pop();
+
+        boolean result =  linkedList.getHead().equals(Node2) &&
+                linkedList.getTail().equals(Node3);
+
+        Assert.assertTrue(result);
     }
 
 }
