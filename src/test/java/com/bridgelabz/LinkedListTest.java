@@ -39,4 +39,24 @@ public class LinkedListTest {
 
     }
 
+    @Test
+    public void given3NumbersWhenAppendedShouldPassLinkedListTest(){
+        INode<Integer> Node1 = new MyNode<>(56);
+        INode<Integer> Node2 = new MyNode<>(30);
+        INode<Integer> Node3 = new MyNode<>(70);
+
+        LinkedList linkedList = new LinkedList();
+
+        linkedList.append(Node1);
+        linkedList.append(Node2);
+        linkedList.append(Node3);
+
+        boolean result =  linkedList.getHead().equals(Node1) &&
+                linkedList.getHead().getNext().equals(Node2) &&
+                linkedList.getTail().equals(Node3);
+
+        Assert.assertTrue(result);
+
+    }
+
 }

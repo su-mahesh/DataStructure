@@ -21,6 +21,21 @@ public class LinkedList {
             this.head.setNext(tempNode);
         }
     }
+    public void append(INode newNode) {
+
+        if(this.head == null)
+            this.head = newNode;
+
+        if(this.tail == null)
+            this.tail = newNode;
+        else {
+            INode tempNode = this.tail;
+            tempNode.setNext(newNode);
+            this.tail = newNode;
+        }
+
+    }
+
 
     public INode getHead() {
         return this.head;
@@ -29,4 +44,6 @@ public class LinkedList {
     public INode getTail() {
         return this.tail;
     }
+
+
 }
