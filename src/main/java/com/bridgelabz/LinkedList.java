@@ -36,7 +36,6 @@ public class LinkedList {
 
     }
 
-
     public INode getHead() {
         return this.head;
     }
@@ -45,5 +44,8 @@ public class LinkedList {
         return this.tail;
     }
 
-
+    public void insert(INode previousNode, INode newNode, INode nextNode) {
+        previousNode.setNext(nextNode);
+        newNode.setNext(nextNode);
+    }
 }
