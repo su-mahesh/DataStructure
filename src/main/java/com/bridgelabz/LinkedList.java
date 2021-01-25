@@ -84,4 +84,29 @@ public class LinkedList {
             tempNode = tempNode.getNext();
         }
     }
+
+    public void deleteNode(INode myNode) {
+        INode tempNode = head;
+        while (tempNode.getNext()!= null  ) {
+            if (tempNode.getNext().getKey() == myNode.getKey()){
+                tempNode.setNext(tempNode.getNext().getNext());
+                size();
+                break;
+            }
+            tempNode = tempNode.getNext();
+        }
+
+    }
+
+    private void size() {
+        int size = 0;
+        INode tempNode = head;
+        while (tempNode.getNext()!= null  ) {
+            size++;
+            tempNode = tempNode.getNext();
+        }
+        size++;
+        System.out.println("size of linked list: "+size);
+
+    }
 }

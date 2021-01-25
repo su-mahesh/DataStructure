@@ -162,5 +162,27 @@ public class LinkedListTest {
         Assert.assertTrue(result);
     }
 
+    @Test
+    public void givenSequence_WhenDeletedSpecificNode_ShouldPassLinkedListTest(){
+        INode<Integer> node1 = new MyNode<>(56);
+        INode<Integer> node2 = new MyNode<>(30);
+        INode<Integer> node3 = new MyNode<>(40);
+        INode<Integer> node4 = new MyNode<>(70);
+
+        LinkedList linkedList = new LinkedList();
+
+        linkedList.append(node1);
+        linkedList.append(node2);
+        linkedList.append(node3);
+        linkedList.append(node4);
+
+        linkedList.deleteNode(node3);
+        boolean result = linkedList.getHead().equals(node1) &&
+                    linkedList.getHead().getNext().equals(node2) &&
+                    linkedList.getTail().equals(node4);
+
+        Assert.assertTrue(result);
+    }
+
 
 }
