@@ -60,4 +60,17 @@ public class LinkedList {
         }   tempNode.setNext(null);
             this.tail = tempNode;
     }
+
+    public boolean searchNode(INode searchNode) {
+
+        INode tempNode = head;
+        while (!tempNode.equals(tail) ) {
+            if (tempNode.getKey() == searchNode.getKey())
+                return true;
+            tempNode = tempNode.getNext();
+        }
+
+        return false;
+
+    }
 }

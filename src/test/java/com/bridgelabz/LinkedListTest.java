@@ -116,4 +116,29 @@ public class LinkedListTest {
 
         Assert.assertTrue(result);
     }
+
+    @Test
+    public void givenNodeInSequenceWhenSearchedShouldPassLinkedListTest(){
+        INode<Integer> node1 = new MyNode<>(56);
+        INode<Integer> node2 = new MyNode<>(50);
+        INode<Integer> node3 = new MyNode<>(75);
+        INode<Integer> node4 = new MyNode<>(76);
+        INode<Integer> node5 = new MyNode<>(30);
+        INode<Integer> node6 = new MyNode<>(70);
+
+        LinkedList linkedList = new LinkedList();
+
+        linkedList.append(node1);
+        linkedList.append(node2);
+        linkedList.append(node3);
+        linkedList.append(node4);
+        linkedList.append(node5);
+        linkedList.append(node6);
+
+        boolean result = linkedList.searchNode(node5);
+
+        Assert.assertTrue(result);
+    }
+
+
 }
