@@ -48,8 +48,10 @@ public class LinkedList<K extends Comparable<K>>  {
         previousNode.setNext(newNode);
     }
 
-    public void pop() {
+    public INode pop() {
+        INode tempNode = this.head;
         this.head = head.getNext();
+        return tempNode;
     }
 
     public void popLast() {

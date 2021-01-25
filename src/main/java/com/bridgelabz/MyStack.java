@@ -12,8 +12,12 @@ public class MyStack {
         myLinkedList.add(node1);
     }
 
-
     public INode peek() {
         return myLinkedList.getHead();
+    }
+
+    public INode pop() {
+
+        return myLinkedList.pop();
     }
 }
