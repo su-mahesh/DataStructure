@@ -127,7 +127,8 @@ public class LinkedList<K extends Comparable<K>>  {
             }
             myNode.setNext(tempNode.getNext());
             tempNode.setNext(myNode);
-        }}
+            }
+        }
     }
 
 }
