@@ -140,5 +140,27 @@ public class LinkedListTest {
         Assert.assertTrue(result);
     }
 
+    @Test
+    public void givenSequence_WhenInsertedAfterSpecifiedNode_ShouldPassLinkedListTest(){
+        INode<Integer> node1 = new MyNode<>(56);
+        INode<Integer> node2 = new MyNode<>(30);
+        INode<Integer> node3 = new MyNode<>(70);
+        INode<Integer> node4 = new MyNode<>(40);
+
+        LinkedList linkedList = new LinkedList();
+
+        linkedList.append(node1);
+        linkedList.append(node2);
+        linkedList.append(node3);
+
+        linkedList.insertAfter(node2, node4);
+        boolean result = linkedList.getHead().equals(node1) &&
+                        linkedList.getTail().equals(node3) &&
+                        linkedList.getHead().getNext().equals(node2) &&
+                        linkedList.getHead().getNext().getNext().equals(node4);
+
+        Assert.assertTrue(result);
+    }
+
 
 }

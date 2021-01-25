@@ -64,13 +64,24 @@ public class LinkedList {
     public boolean searchNode(INode searchNode) {
 
         INode tempNode = head;
-        while (!tempNode.equals(tail) ) {
+        while (tempNode.getNext()!= null ) {
             if (tempNode.getKey() == searchNode.getKey())
                 return true;
             tempNode = tempNode.getNext();
         }
 
         return false;
+    }
 
+    public void insertAfter(INode previousNode, INode newNode) {
+        INode tempNode = head;
+        while (tempNode.getNext()!= null  ) {
+            if (tempNode.getKey() == previousNode.getKey()){
+                newNode.setNext(tempNode.getNext());
+                tempNode.setNext(newNode);
+                break;
+            }
+            tempNode = tempNode.getNext();
+        }
     }
 }
