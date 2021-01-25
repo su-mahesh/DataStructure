@@ -44,12 +44,20 @@ public class LinkedList {
         return this.tail;
     }
 
-    public void insert(INode previousNode, INode newNode, INode nextNode) {
-        previousNode.setNext(nextNode);
-        newNode.setNext(nextNode);
+    public void insert(INode previousNode, INode newNode) {
+        newNode.setNext(previousNode.getNext());
+        previousNode.setNext(newNode);
     }
 
     public void pop() {
-        this.head = this.head.getNext();
+        this.head = head.getNext();
+    }
+
+    public void popLast() {
+        INode tempNode = head;
+        while (!tempNode.getNext().equals(tail)) {
+            tempNode = tempNode.getNext();
+        }   tempNode.setNext(null);
+            this.tail = tempNode;
     }
 }
