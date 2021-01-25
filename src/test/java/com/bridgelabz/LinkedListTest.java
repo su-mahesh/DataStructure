@@ -6,7 +6,7 @@ import org.junit.Test;
 public class LinkedListTest {
 
     @Test
-    public void given3NumbersWhenLinkedShouldPassLinkedListTest() {
+    public void given3Nodes_WhenLinkedShould_PassLinkedListTest() {
         INode<Integer> node1 = new MyNode<>(70);
         INode<Integer> node2 = new MyNode<>(30);
         INode<Integer> node3 = new MyNode<>(56);
@@ -20,7 +20,7 @@ public class LinkedListTest {
     }
 
     @Test
-    public void given3NumbersWhenAddedShouldPassLinkedListTest(){
+    public void given3Nodes_WhenAdded_ShouldPassLinkedListTest(){
         INode<Integer> node1 = new MyNode<>(70);
         INode<Integer> node2 = new MyNode<>(30);
         INode<Integer> node3 = new MyNode<>(56);
@@ -40,7 +40,7 @@ public class LinkedListTest {
     }
 
     @Test
-    public void given3NumbersWhenAppendedShouldPassLinkedListTest(){
+    public void given3Nodes_WhenAppended_ShouldPassLinkedListTest(){
         INode<Integer> node1 = new MyNode<>(56);
         INode<Integer> node2 = new MyNode<>(30);
         INode<Integer> node3 = new MyNode<>(70);
@@ -59,7 +59,7 @@ public class LinkedListTest {
     }
 
     @Test
-    public void given3NumbersWhenInsertedInBetweenShouldPassLinkedListTest(){
+    public void givenNodes_WhenInsertedAfterSpecifiedNode_ShouldPassLinkedListTest(){
         INode<Integer> node1 = new MyNode<>(56);
         INode<Integer> node2 = new MyNode<>(70);
         INode<Integer> node3 = new MyNode<>(30);
@@ -78,7 +78,7 @@ public class LinkedListTest {
     }
 
     @Test
-    public void givenSequenceWhenDeletedFirstElementShouldPassLinkedListTest(){
+    public void givenNodes_WhenDeletedFirstElement_ShouldPassLinkedListTest(){
         INode<Integer> node1 = new MyNode<>(56);
         INode<Integer> node2 = new MyNode<>(30);
         INode<Integer> node3 = new MyNode<>(70);
@@ -98,7 +98,7 @@ public class LinkedListTest {
     }
 
     @Test
-    public void givenSequenceWhenDeletedLastElementShouldPassLinkedListTest(){
+    public void givenNodes_WhenDeletedLastElement_ShouldPassLinkedListTest(){
         INode<Integer> node1 = new MyNode<>(56);
         INode<Integer> node2 = new MyNode<>(30);
         INode<Integer> node3 = new MyNode<>(70);
@@ -118,7 +118,7 @@ public class LinkedListTest {
     }
 
     @Test
-    public void givenNodeInSequenceWhenSearchedShouldPassLinkedListTest(){
+    public void givenNodes_WhenSearchedAnode_ShouldPassLinkedListTest(){
         INode<Integer> node1 = new MyNode<>(56);
         INode<Integer> node2 = new MyNode<>(50);
         INode<Integer> node3 = new MyNode<>(75);
@@ -184,5 +184,24 @@ public class LinkedListTest {
         Assert.assertTrue(result);
     }
 
+    @Test
+    public void givenSequence_WhenAddedNodes_ShouldPassOrderedLinkedListTest(){
+        INode<Integer> node1 = new MyNode<>(56);
+        INode<Integer> node2 = new MyNode<>(30);
+        INode<Integer> node3 = new MyNode<>(40);
+        INode<Integer> node4 = new MyNode<>(70);
 
+        LinkedList linkedList = new LinkedList();
+
+        linkedList.addInOrderList(node1);
+        linkedList.addInOrderList(node2);
+        linkedList.addInOrderList(node3);
+        linkedList.addInOrderList(node4);
+
+        boolean result = linkedList.getHead().equals(node2) &&
+                linkedList.getHead().getNext().equals(node3) &&
+                linkedList.getTail().equals(node1);
+
+        Assert.assertTrue(result);
+    }
 }

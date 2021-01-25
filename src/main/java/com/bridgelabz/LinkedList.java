@@ -1,14 +1,20 @@
 package com.bridgelabz;
 
-public class LinkedList {
-    private INode head;
-    private INode tail;
+public class LinkedList<K extends Comparable<K>>  {
+    private INode<K> head;
+    private INode<K> tail;
 
     public LinkedList() {
         this.head = null;
         this.tail = null;
     }
+    public INode getHead() {
+        return this.head;
+    }
 
+    public INode getTail() {
+        return this.tail;
+    }
     public void add(INode newNode) {
         if(this.tail == null)
             this.tail = newNode;
@@ -36,13 +42,6 @@ public class LinkedList {
 
     }
 
-    public INode getHead() {
-        return this.head;
-    }
-
-    public INode getTail() {
-        return this.tail;
-    }
 
     public void insert(INode previousNode, INode newNode) {
         newNode.setNext(previousNode.getNext());
@@ -61,11 +60,11 @@ public class LinkedList {
             this.tail = tempNode;
     }
 
-    public boolean searchNode(INode searchNode) {
+    public boolean searchNode(INode myNode) {
 
         INode tempNode = head;
         while (tempNode.getNext()!= null ) {
-            if (tempNode.getKey() == searchNode.getKey())
+            if (tempNode.getKey() == myNode.getKey())
                 return true;
             tempNode = tempNode.getNext();
         }
@@ -87,7 +86,7 @@ public class LinkedList {
 
     public void deleteNode(INode myNode) {
         INode tempNode = head;
-        while (tempNode.getNext()!= null  ) {
+        while (tempNode.getNext()!= null ) {
             if (tempNode.getNext().getKey() == myNode.getKey()){
                 tempNode.setNext(tempNode.getNext().getNext());
                 size();
@@ -95,10 +94,9 @@ public class LinkedList {
             }
             tempNode = tempNode.getNext();
         }
-
     }
 
-    private void size() {
+    private int size() {
         int size = 0;
         INode tempNode = head;
         while (tempNode.getNext()!= null  ) {
@@ -108,5 +106,28 @@ public class LinkedList {
         size++;
         System.out.println("size of linked list: "+size);
 
+        return size;
     }
+
+    public void addInOrderList(INode<K> myNode) {
+        if(this.head == null)
+            this.head = myNode;
+
+        if(this.tail == null)
+            this.tail = myNode;
+        else {
+            if (this.head.getKey().compareTo(myNode.getKey()) > 0) {
+            myNode.setNext(this.head);
+            head = myNode;
+            }
+            else {
+            INode<K> tempNode = this.head;
+            while(tempNode.getNext() != null && (tempNode.getNext().getKey().compareTo(myNode.getKey()) < 0)) {
+                tempNode = tempNode.getNext();
+            }
+            myNode.setNext(tempNode.getNext());
+            tempNode.setNext(myNode);
+        }}
+    }
+
 }
