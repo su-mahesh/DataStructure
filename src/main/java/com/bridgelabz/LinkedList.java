@@ -87,7 +87,10 @@ public class LinkedList<K extends Comparable<K>>  {
 
     public void deleteNode(INode myNode) {
         INode tempNode = head;
-        while (tempNode.getNext()!= null ) {
+
+        if (head.equals(myNode))
+            this.head = this.head.getNext();
+        while (tempNode.getNext()!= null) {
             if (tempNode.getNext().getKey() == myNode.getKey()){
                 tempNode.setNext(tempNode.getNext().getNext());
                 size();
@@ -96,6 +99,18 @@ public class LinkedList<K extends Comparable<K>>  {
             tempNode = tempNode.getNext();
         }
     }
+
+/*    public void deleteNode(INode myNode) {
+        INode tempNode = head;
+        while (tempNode.getNext()!= null ) {
+            if (tempNode.getNext().getKey() == myNode.getKey()){
+                tempNode.setNext(tempNode.getNext().getNext());
+                size();
+                break;
+            }
+            tempNode = tempNode.getNext();
+        }
+    }*/
 
     private int size() {
         int size = 0;
