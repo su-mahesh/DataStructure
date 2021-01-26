@@ -27,7 +27,7 @@ public class MyBinaryTree<K extends Comparable> {
     }
 
     private int getSizeRecursively(MyBinaryNode<K> current) {
-        return current == null ? 0 : 1 + this.getSizeRecursively(current.right)
+        return current == null ? 0 : 1 + this.getSizeRecursively(current.left)
                                        + this.getSizeRecursively(current.right);
     }
 }
