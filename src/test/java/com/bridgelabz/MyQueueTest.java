@@ -24,7 +24,7 @@ public class MyQueueTest {
     }
 
     @Test
-    public void given3Numbers_WhenDequeued_ShouldHaveLastAddedNode() {
+    public void given3Numbers_WhenDequeued_ShouldReturnFirstAddedNode() {
 
         MyNode<Integer> node1 = new MyNode<>(56);
         MyNode<Integer> node2 = new MyNode<>(30);

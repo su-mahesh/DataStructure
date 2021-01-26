@@ -6,7 +6,7 @@ import org.junit.Test;
 public class MyStackTest {
 
     @Test
-    public void given3Numbers_WhenAddedToStack_ShouldHaveLastAddedNode(){
+    public void given3Numbers_WhenAddedToStack_ShouldMatchLastAddedNode(){
         MyNode<Integer> node1 = new MyNode<>(70);
         MyNode<Integer> node2 = new MyNode<>(30);
         MyNode<Integer> node3 = new MyNode<>(56);

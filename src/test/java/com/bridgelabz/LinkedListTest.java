@@ -118,7 +118,7 @@ public class LinkedListTest {
     }
 
     @Test
-    public void givenNodes_WhenSearchedAnode_ShouldPassLinkedListTest(){
+    public void givenNodes_WhenSearchedSpecificNode_ShouldPassLinkedListTest(){
         INode<Integer> node1 = new MyNode<>(56);
         INode<Integer> node2 = new MyNode<>(50);
         INode<Integer> node3 = new MyNode<>(75);
