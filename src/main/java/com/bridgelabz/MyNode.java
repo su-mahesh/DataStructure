@@ -1,6 +1,6 @@
 package com.bridgelabz;
 
-public class MyNode<K> implements INode<K>{
+public class MyNode<K extends Comparable> implements INode<K>{
     private K key;
     private MyNode<K> next;
 
@@ -8,7 +8,6 @@ public class MyNode<K> implements INode<K>{
         this.key = key;
         this.next = null;
     }
-    public void getD(){}
     @Override
     public void setNext(INode<K> next) {
         this.next = (MyNode<K>) next;

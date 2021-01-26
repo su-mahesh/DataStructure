@@ -15,6 +15,7 @@ public class LinkedList<K extends Comparable<K>>  {
     public INode getTail() {
         return this.tail;
     }
+
     public void add(INode newNode) {
         if(this.tail == null)
             this.tail = newNode;
@@ -27,6 +28,7 @@ public class LinkedList<K extends Comparable<K>>  {
             this.head.setNext(tempNode);
         }
     }
+
     public void append(INode newNode) {
 
         if(this.head == null)
@@ -35,13 +37,11 @@ public class LinkedList<K extends Comparable<K>>  {
         if(this.tail == null)
             this.tail = newNode;
         else {
-            INode tempNode = this.tail;
-            tempNode.setNext(newNode);
+            this.tail.setNext(newNode);
             this.tail = newNode;
         }
 
     }
-
 
     public void insert(INode previousNode, INode newNode) {
         newNode.setNext(previousNode.getNext());
@@ -63,7 +63,6 @@ public class LinkedList<K extends Comparable<K>>  {
     }
 
     public boolean searchNode(INode myNode) {
-
         INode tempNode = head;
         while (tempNode.getNext()!= null ) {
             if (tempNode.getKey() == myNode.getKey())
@@ -133,4 +132,19 @@ public class LinkedList<K extends Comparable<K>>  {
         }
     }
 
+    public INode<K> search(K key) {
+        INode<K> tempNode = head;
+        while (tempNode!= null ) {
+            if (tempNode.getKey().compareTo(key) == 0)
+                return tempNode;
+            tempNode = tempNode.getNext();
+        }
+        return null;
+    }
+
+    @Override
+    public String toString() {
+        return "MyLinkedListNodes{" + head + '}';
+
+    }
 }
