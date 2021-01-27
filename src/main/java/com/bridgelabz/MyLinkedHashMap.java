@@ -45,7 +45,6 @@ public class MyLinkedHashMap<K extends Comparable<K>, V> {
         else myMapNode.setValue(value);
     }
 
-
     public void remove(K key) {
         int index = this.getBucketIndex(key);
         LinkedList<K> myLinkedList = this.myBucketArray.get(index);
@@ -56,7 +55,6 @@ public class MyLinkedHashMap<K extends Comparable<K>, V> {
                 myLinkedList.deleteNode(myMapNode);
             }
         }
-
     }
 
     @Override

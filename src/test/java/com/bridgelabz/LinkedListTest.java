@@ -52,8 +52,8 @@ public class LinkedListTest {
         linkedList.append(node3);
 
         boolean result =  linkedList.getHead().equals(node1) &&
-                linkedList.getHead().getNext().equals(node2) &&
-                linkedList.getTail().equals(node3);
+                          linkedList.getHead().getNext().equals(node2) &&
+                          linkedList.getTail().equals(node3);
 
         Assert.assertTrue(result);
     }
@@ -71,8 +71,8 @@ public class LinkedListTest {
         linkedList.insert(node1, node3);
 
         boolean result =  linkedList.getHead().equals(node1) &&
-                linkedList.getHead().getNext().equals(node3) &&
-                linkedList.getTail().equals(node2);
+                          linkedList.getHead().getNext().equals(node3) &&
+                          linkedList.getTail().equals(node2);
 
         Assert.assertTrue(result);
     }
@@ -92,7 +92,7 @@ public class LinkedListTest {
         linkedList.pop();
 
         boolean result =  linkedList.getHead().equals(node2) &&
-                linkedList.getTail().equals(node3);
+                          linkedList.getTail().equals(node3);
 
         Assert.assertTrue(result);
     }
@@ -112,7 +112,8 @@ public class LinkedListTest {
         linkedList.popLast();
 
         boolean result =  linkedList.getHead().equals(node1) &&
-                linkedList.getHead().getNext().equals(node2);
+                          linkedList.getHead().getNext().equals(node2) &&
+                          linkedList.getTail().equals(node2);
 
         Assert.assertTrue(result);
     }
@@ -155,9 +156,9 @@ public class LinkedListTest {
 
         linkedList.insertAfter(node2, node4);
         boolean result = linkedList.getHead().equals(node1) &&
-                        linkedList.getTail().equals(node3) &&
-                        linkedList.getHead().getNext().equals(node2) &&
-                        linkedList.getHead().getNext().getNext().equals(node4);
+                         linkedList.getTail().equals(node3) &&
+                         linkedList.getHead().getNext().equals(node2) &&
+                         linkedList.getHead().getNext().getNext().equals(node4);
 
         Assert.assertTrue(result);
     }
@@ -178,8 +179,8 @@ public class LinkedListTest {
 
         linkedList.deleteNode(node3);
         boolean result = linkedList.getHead().equals(node1) &&
-                    linkedList.getHead().getNext().equals(node2) &&
-                    linkedList.getTail().equals(node4);
+                         linkedList.getHead().getNext().equals(node2) &&
+                         linkedList.getTail().equals(node4);
 
         Assert.assertTrue(result);
     }
@@ -199,8 +200,8 @@ public class LinkedListTest {
         linkedList.addInOrderList(node4);
 
         boolean result = linkedList.getHead().equals(node2) &&
-                linkedList.getHead().getNext().equals(node3) &&
-                linkedList.getTail().equals(node1);
+                         linkedList.getHead().getNext().equals(node3) &&
+                         linkedList.getTail().equals(node1);
 
         Assert.assertTrue(result);
     }
