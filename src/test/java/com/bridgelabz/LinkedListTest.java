@@ -68,7 +68,7 @@ public class LinkedListTest {
 
         linkedList.append(node1);
         linkedList.append(node2);
-        linkedList.insert(node1, node3);
+        linkedList.insertAfter(node1, node3);
 
         boolean result =  linkedList.getHead().equals(node1) &&
                           linkedList.getHead().getNext().equals(node3) &&

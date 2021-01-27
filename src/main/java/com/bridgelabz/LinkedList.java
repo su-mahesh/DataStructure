@@ -43,11 +43,6 @@ public class LinkedList<K extends Comparable<K>>  {
 
     }
 
-    public void insert(INode previousNode, INode newNode) {
-        newNode.setNext(previousNode.getNext());
-        previousNode.setNext(newNode);
-    }
-
     public INode pop() {
         INode tempNode = this.head;
         this.head = head.getNext();
